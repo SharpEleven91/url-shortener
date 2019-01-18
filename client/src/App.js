@@ -1,26 +1,10 @@
 import React, { Component } from 'react';
 import './App.css';
-import TextField from '@material-ui/core/TextField';
-import { withStyles } from '@material-ui/core/styles';
 import SubmitButton from'./Components/Submit';
-import classNames from 'classnames';
+import URLInput from './Components/URLInput';
+import ResultModal from './Components/ResultModal.js';
 import axios from 'axios';
-const styles = theme => ({
-  button : {
-    margin: theme.spacing.unit,
-  },
-  input: {
-    display: 'none',
-  },
-  margin: {
-    margin: theme.spacing.unit,
-  },
-  textField: {
-    flexBasis: 200,
-    width: 500,
-    height: 45
-  }
-});
+import { Replay } from '@material-ui/icons';
 let axiosConfig = {
   headers: {
       'Content-Type': 'application/json',
@@ -37,6 +21,12 @@ class App extends Component {
       url: event.target.value
     })
   }
+  resetState() {
+    this.setState({
+      url: '',
+      shortResult: ''
+    })
+  }
   onSubmit() {
     console.log('Request Sent');
     axios.post('http://localhost:7000/api/url-shortener', { originalUrl: this.state.url, baseUrl: "http://localhost:7000" }, axiosConfig)
@@ -46,18 +36,18 @@ class App extends Component {
       }).catch((err) => { console.log(err) });
   }
   render() {
-    const inputProps = {
-      steps: 300,
-    }
-    const { classes } = this.props;
     return (
       <div className="App">
-        <TextField id="urlInput" onChange={this.handleChange} className={classNames(classes.margin, classes.textField)}type="url" variant="outlined" inputProps={inputProps} />
-        <SubmitButton clickHandle={this.onSubmit.bind(this)}/>
-        { this.state.shortResult ? <a href={this.state.shortResult}> {this.state.shortResult} </a> : null }
+        <Replay onClick={this.resetState.bind(this)}/>
+        {this.state.shortResult ? <ResultModal result={this.state.shortResult}/>
+        :
+        <div>
+          <URLInput handleChange={this.handleChange.bind(this)}/>
+          <SubmitButton clickHandle={this.onSubmit.bind(this)}/>
+        </div>}
       </div>
     );
   }
 }
 
-export default withStyles(styles)(App)
+export default App
