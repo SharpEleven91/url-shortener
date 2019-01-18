@@ -10,13 +10,14 @@ module.exports = function(app) {
     const query = await ShortUrl.findOne({ urlID: hashedUrl }); // make a query on the databased to see hashedUrl exists
     if (query)
       return res.redirect(query.originalUrl); // redirect the user to the hasedUrls original URL
-    else res.redirect(errorUrl); // else throw error
+    else res.status(404).json(err); // else throw error
   });
 
   // create new hash URL and place in database
   app.post("/api/url-shortener", async (req, res) => {
-    const { originalUrl, baseUrl } = req.body; // extract originalUrl and baseUrl from request body
-    if (!validUrl.isUri(baseUrl)) { // if the baseUrl is invalid throw an error
+    let { originalUrl, baseUrl } = req.body; // extract originalUrl and baseUrl from request body
+    originalUrl = originalUrl.toLowerCase(); // normalize originalUrls so duplicates are not created in database because of case-sensitivity when search
+    if (!validUrl.isUri(baseUrl) || originalUrl === "") { // if the baseUrl is invalid throw an error
       return res.status(401).json("Bad Base URL");
     }
     const urlID = shortid.generate(); // generate hash id 
@@ -40,6 +41,8 @@ module.exports = function(app) {
       } catch (err) {
         res.status(401).json(err); // throw error if anything fails 
       }
+    } else {
+      res.status(401).json("bad url");
     }
   });
 };

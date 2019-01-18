@@ -4,7 +4,7 @@ const app = express();
 const bodyParser = require('body-parser');
 const mongoose = require("mongoose");
 const database = require('./config/db');
-const PORT = 3000;
+const PORT = 7000;
 const connectionOps = {
     keepAlive: true, 
     reconnectTries: Number.MAX_VALUE,
@@ -18,7 +18,11 @@ mongoose.connect(database.url, connectionOps, (err, db) => {
     console.log('Database connected');
     app.use(bodyParser.json());
     require('./models/ShortUrl');
-    
+    app.use(function(req, res, next) {
+        res.header("Access-Control-Allow-Origin", "*");
+        res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+        next();
+    });
     app.listen(PORT, () => {
         console.log(`Listening on port: ${PORT}`)
         require('./routes/shortenUrl')(app);
