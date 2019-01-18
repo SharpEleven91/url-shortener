@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import TextField from '@material-ui/core/TextField';
 import { withStyles } from '@material-ui/core/styles';
-import Button from '@material-ui/core/Button';
+import SubmitButton from'./Components/Submit';
 import classNames from 'classnames';
 import axios from 'axios';
 const styles = theme => ({
@@ -53,7 +53,7 @@ class App extends Component {
     return (
       <div className="App">
         <TextField id="urlInput" onChange={this.handleChange} className={classNames(classes.margin, classes.textField)}type="url" variant="outlined" inputProps={inputProps} />
-        <Button variant='contained' onClick={this.onSubmit.bind(this)} color='primary' className={classes.button}> Minify Me! </Button>
+        <SubmitButton clickHandle={this.onSubmit.bind(this)}/>
         { this.state.shortResult ? <a href={this.state.shortResult}> {this.state.shortResult} </a> : null }
       </div>
     );
