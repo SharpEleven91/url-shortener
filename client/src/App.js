@@ -7,6 +7,7 @@ import axios from "axios";
 import { Replay } from "@material-ui/icons";
 import Error from "./Components/Error";
 import IconButton from "@material-ui/core/IconButton";
+import { Assignment } from "@material-ui/icons"
 
 const axiosConfig = {
   headers: {
@@ -16,7 +17,8 @@ const axiosConfig = {
 class App extends Component {
   state = {
     url: "",
-    shortResult: ""
+    shortResult: "",
+    textArea: React.createRef()
   };
   handleChange(event) {
     this.setState({
@@ -49,11 +51,14 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Error checked={this.state.error}/>
+        <Error checked={this.state.error ? true : false}/>
         {this.state.shortResult ? (
           <div className="resultgroup">     
             <Result result={this.state.shortResult} />
-            <IconButton><Replay fontSize="large" onClick={this.resetState.bind(this)} /></IconButton>
+            <div>
+              <IconButton onClick={this.resetState.bind(this)}><Replay fontSize="large"/></IconButton>
+              <IconButton onClick={this.clickboardCopy}><Assignment fontSize="large"/></IconButton>
+            </div>
           </div>
         ) : (
           <div className="inputgroup">
