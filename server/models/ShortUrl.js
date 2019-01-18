@@ -4,7 +4,6 @@ const shortenedUrlSchema = new Schema({
     originalUrl: String,
     shortUrl: String,
     urlID: String,
-    createdBy: String,
     createdAt: { type: Date, default: Date.now },
     UpdatedAt: { type: Date, default: Date.now }
 })
