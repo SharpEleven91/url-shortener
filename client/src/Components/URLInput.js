@@ -10,8 +10,9 @@ const styles = theme => ({
     margin: theme.spacing.unit
   },
   textField: {
-    flexBasis: 200,
-    width: 500,
+    margin: 0,
+    padding: 0,
+    width: 525,
     height: 45
   }
 });

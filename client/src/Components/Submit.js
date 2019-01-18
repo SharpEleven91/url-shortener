@@ -16,7 +16,7 @@ const styles = theme => ({
 class Submit extends Component {
     render() {
         const { classes } = this.props;
-        return <Button size='large' fullWidth={true} variant='text' onClick={this.props.clickHandle} color='primary' className={classes.button}> MiNiFy </Button>
+        return <Button variant='text' onClick={this.props.clickHandle} color='primary' className={classes.button}> MiNiFy </Button>
     }
 }
 
