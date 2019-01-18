@@ -3,23 +3,25 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const mongoose = require("mongoose");
-const db = require('./config/db');
-const PORT = 8000;
+const database = require('./config/db');
+const PORT = 3000;
 const connectionOps = {
     keepAlive: true, 
     reconnectTries: Number.MAX_VALUE,
     useNewUrlParser: true
 }
 
-app.use(bodyParser.json);
+
 mongoose.Promise = global.Promise;
-mongoose.connect(db.url, connectionOps, (err, database) => {
+mongoose.connect(database.url, connectionOps, (err, db) => {
     if (err) return console.log(`Error: ${err}`);
     console.log('Database connected');
+    app.use(bodyParser.json());
     require('./models/ShortUrl');
-    require('./routes/shortenUrl')(app);
+    
     app.listen(PORT, () => {
         console.log(`Listening on port: ${PORT}`)
+        require('./routes/shortenUrl')(app);
     });
 });
 
