@@ -36,8 +36,8 @@ class App extends Component {
     console.log("Request Sent");
     axios
       .post(
-        "http://localhost:7000/api/url-shortener",
-        { originalUrl: this.state.url, baseUrl: "http://localhost:7000" },
+        "http://localhost:8000/api/url-shortener",
+        { originalUrl: this.state.url, baseUrl: "http://localhost:8000" },
         axiosConfig
       )
       .then(res => {

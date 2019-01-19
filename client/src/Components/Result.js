@@ -20,7 +20,7 @@ class Result extends Component {
     render() {
         return (
           <Fade in={true}>
-            <Typography component="h2" variant="h1" gutterBottom> {this.props.result} </Typography>
+            <Typography component="h4" variant="h4" gutterBottom> {this.props.result} </Typography>
           </Fade>
         )
   }
