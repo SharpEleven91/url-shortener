@@ -1,19 +1,17 @@
 {
-  "name": "url-shortner",
+  "name": "server",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/SharpEleven91/url-shortener.git"
+    "start" : "node server.js"
   },
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/SharpEleven91/url-shortener/issues"
-  },
-  "homepage": "https://github.com/SharpEleven91/url-shortener#readme"
+  "dependencies": {
+    "express": "^4.16.4",
+    "mongoose": "^5.4.4",
+    "shortid": "^2.2.14",
+    "valid-url": "^1.0.9"
+  }
 }
