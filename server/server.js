@@ -4,7 +4,7 @@ const app = express();
 const bodyParser = require('body-parser');
 const mongoose = require("mongoose");
 const database = require('./config/db');
-const PORT = 7000;
+const PORT = 8000;
 const connectionOps = {
     keepAlive: true, 
     reconnectTries: Number.MAX_VALUE,
