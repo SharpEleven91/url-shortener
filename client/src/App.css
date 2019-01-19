@@ -1,4 +1,5 @@
 html, body { height: 100%; }
+
 body {
   display: flex;
   flex-direction: column;
@@ -7,11 +8,15 @@ body {
   font-family: 'Roboto', 'san-serif';
   width: 100%;
 }
+#github-link {
+  margin-top: 350px;
+}
 .inputgroup {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-self: center;
+  align-items: center;
+  color: 'white';
 }
 .App {
   text-align: center;
@@ -20,6 +25,16 @@ body {
   justify-content: center;
   align-items: center;
   min-width: 700px;
+  height: 100%;
+}
+#urlinput {
+  border-color: #625772 !important;
+}
+.logo {
+  background-color: #625772;
+  color: white !important;
+  padding: 110px;
+  margin-bottom: 25px;
 }
 
 .App-logo {

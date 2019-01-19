@@ -1,24 +1,21 @@
 import React, { Component } from "react";
 import "./App.css";
-import SubmitButton from "./Components/Submit";
-import URLInput from "./Components/URLInput";
 import Result from "./Components/Result.js";
 import axios from "axios";
-import { Replay } from "@material-ui/icons";
 import Error from "./Components/Error";
-import IconButton from "@material-ui/core/IconButton";
-import { Assignment } from "@material-ui/icons"
-
+import Logo from "./Components/Logo";
+import InputForm from "./Components/InputForm";
+import Footer from "./Components/Footer";
 const axiosConfig = {
   headers: {
     "Content-Type": "application/json"
   }
 };
+const baseUrl = "https://umini.herokuapp.com";
 class App extends Component {
   state = {
     url: "",
-    shortResult: "",
-    textArea: React.createRef()
+    result: ""
   };
   handleChange(event) {
     this.setState({
@@ -29,44 +26,50 @@ class App extends Component {
   resetState() {
     this.setState({
       url: "",
-      shortResult: ""
+      result: ""
     });
   }
   onSubmit() {
-    console.log("Request Sent");
     axios
       .post(
-        "http://localhost:8000/api/url-shortener",
-        { originalUrl: this.state.url, baseUrl: "http://localhost:8000" },
+        "/api/url-shortener",
+        { originalUrl: this.state.url, baseUrl: baseUrl },
         axiosConfig
       )
       .then(res => {
-        console.log(res);
-        this.setState({ shortResult: res.data.shortUrl });
+        this.setState({ result: res.data.shortUrl });
       })
       .catch(err => {
-        this.setState({error: "Bad URL"})
+        this.setState({ error: "Bad URL" });
       });
+  }
+  handleKeyPress(event) {
+    if (event.keyCode === 13) {
+      this.onSubmit();
+    }
   }
   render() {
     return (
       <div className="App">
-        <Error checked={this.state.error ? true : false}/>
-        {this.state.shortResult ? (
-          <div className="resultgroup">     
-            <Result result={this.state.shortResult} />
-            <div>
-              <IconButton onClick={this.resetState.bind(this)}><Replay fontSize="large"/></IconButton>
-              <IconButton onClick={this.clickboardCopy}><Assignment fontSize="large"/></IconButton>
-            </div>
-          </div>
+        <Logo />
+        <Error checked={this.state.error ? true : false} />
+        {this.state.result ? (
+          <Result
+            result={this.state.result}
+            reset={this.resetState.bind(this)}
+          />
         ) : (
-          <div className="inputgroup">
-            <URLInput handleChange={this.handleChange.bind(this)} />
-            <SubmitButton clickHandle={this.onSubmit.bind(this)} />
-          </div>
+          <InputForm
+            onSubmit={this.onSubmit.bind(this)}
+            handleKeyPress={this.handleKeyPress.bind(this)}
+            handleChange={this.handleChange.bind(this)}
+          />
         )}
+        <>
+        <Footer/>
+        </>
       </div>
+      
     );
   }
 }

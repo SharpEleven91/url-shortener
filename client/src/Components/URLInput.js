@@ -3,9 +3,6 @@ import TextField from "@material-ui/core/TextField";
 import { withStyles } from "@material-ui/core/styles";
 import classNames from "classnames";
 const styles = theme => ({
-  input: {
-    display: "none"
-  },
   margin: {
     margin: theme.spacing.unit
   },
@@ -13,23 +10,41 @@ const styles = theme => ({
     margin: 0,
     padding: 0,
     width: 525,
-    height: 45
-  }
+    backgroundColor: "white",
+    borderRadius: 11
+  },
+  cssFocused: {},
+  cssOutlinedInput: {
+    "&$cssFocused $notchedOutline": {
+      borderColor: "#625772"
+    }
+  },
+  notchedOutline: {}
 });
 class URLInput extends Component {
   render() {
-    const inputProps = {
-      steps: 300
-    };
     const { classes } = this.props;
     return (
       <TextField
-        id="urlInput"
-        onChange={this.props.handleChange}
         className={classNames(classes.margin, classes.textField)}
-        type="url"
+        InputLabelProps={{
+          classes: {
+            root: classes.cssLabel,
+            focused: classes.cssFocused
+          }
+        }}
+        InputProps={{
+          classes: {
+            root: classes.cssOutlinedInput,
+            focused: classes.cssFocused,
+            notchedOutline: classes.notchedOutline
+          }
+        }}
         variant="outlined"
-        inputProps={inputProps}
+        onChange={this.props.handleChange}
+        autoComplete="off"
+        id="custom-css-outlined-input"
+        onKeyDown={this.props.handleKeyPress}
       />
     );
   }
