@@ -15,7 +15,7 @@ const baseUrl = "https://umini.herokuapp.com";
 class App extends Component {
   state = {
     url: "",
-    result: ""
+    result: "aa"
   };
   handleChange(event) {
     this.setState({
