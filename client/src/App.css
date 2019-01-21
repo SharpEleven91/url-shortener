@@ -53,6 +53,12 @@ body {
   color: white;
 }
 
+#hidden {
+  opacity: 0;
+  z-index: -100;
+  position: absolute;
+}
+
 .App-link {
   color: #61dafb;
 }
