@@ -1,19 +1,15 @@
-import React, { Component } from "react";
+import React from "react";
 import SubmitButton from "./Submit";
 import URLInput from "./URLInput";
 
-class InputForm extends Component {
-  render() {
+export default function InputForm(props) {
     return (
       <div className="inputgroup">
         <URLInput
-          handleChange={this.props.handleChange}
-          handleKeyPress={this.props.handleKeyPress}
+          handleChange={props.handleChange}
+          handleKeyPress={props.handleKeyPress}
         />
-        <SubmitButton onSubmit={this.props.onSubmit} />
+        <SubmitButton onSubmit={props.onSubmit} />
       </div>
     );
-  }
 }
-
-export default InputForm;

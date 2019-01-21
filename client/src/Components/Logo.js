@@ -1,7 +1,7 @@
 import React from "react";
 import { Typography } from "@material-ui/core/";
 
-function Logo() {
+export default function Logo() {
   return (
     <Typography color="inherit" component="h2" variant="h2" gutterBottom>
       ./URL MiNiFy
@@ -9,4 +9,3 @@ function Logo() {
   );
 };
 
-export default Logo;
