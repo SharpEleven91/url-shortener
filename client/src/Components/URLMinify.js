@@ -14,7 +14,7 @@ const axiosConfig = {
 const baseUrl = "https://umini.herokuapp.com";
 export default function URLMinify() {
   const [url, setUrl] = useState('');
-  const [result, setResult] = useState('oalk');
+  const [result, setResult] = useState('');
   const [error, setError] = useState('');
   function handleChange(event) {
     if (error) {
