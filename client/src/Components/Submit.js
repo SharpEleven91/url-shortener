@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import { withStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 
@@ -14,14 +14,13 @@ const styles = theme => ({
     margin: theme.spacing.unit
   }
 });
-class Submit extends Component {
-  render() {
-    const { classes } = this.props;
+function Submit(props) {
+    const { classes } = props;
     return (
       <Button
         size="large"
         variant="outlined"
-        onClick={this.props.onSubmit}
+        onClick={props.onSubmit}
         color="inherit"
         className={classes.button}
       >
@@ -29,7 +28,6 @@ class Submit extends Component {
         MiNiFy{" "}
       </Button>
     );
-  }
 }
 
 export default withStyles(styles)(Submit);
