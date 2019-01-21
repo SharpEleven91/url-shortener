@@ -7,5 +7,4 @@ export default function Logo() {
       ./URL MiNiFy
     </Typography>
   );
-};
-
+}

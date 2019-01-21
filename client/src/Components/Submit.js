@@ -15,19 +15,19 @@ const styles = theme => ({
   }
 });
 function Submit(props) {
-    const { classes } = props;
-    return (
-      <Button
-        size="large"
-        variant="outlined"
-        onClick={props.onSubmit}
-        color="inherit"
-        className={classes.button}
-      >
-        {" "}
-        MiNiFy{" "}
-      </Button>
-    );
+  const { classes } = props;
+  return (
+    <Button
+      size="large"
+      variant="outlined"
+      onClick={props.onSubmit}
+      color="inherit"
+      className={classes.button}
+    >
+      {" "}
+      MiNiFy{" "}
+    </Button>
+  );
 }
 
 export default withStyles(styles)(Submit);

@@ -9,32 +9,34 @@ import { Assignment } from "@material-ui/icons";
 export default function Result(props) {
   const [copySuccess, setCopySuccess] = useState(false);
   const textRef = useRef(props.result);
-  const TextResult = () => <input id="hidden" ref={textRef} value={props.result} disabled></input>
+  const TextResult = () => (
+    <input id="hidden" ref={textRef} value={props.result} disabled />
+  );
   const handleChange = () => {
-    if (document.execCommand) {
-      textRef.current.select()
+    if (document.execCommand && copySuccess) {
+      textRef.current.select();
       document.execCommand("copy");
+      setCopySuccess(true);
     }
-    setCopySuccess(true);
-  }
-    return (
-      <Fade in={true}>
-        <div>
-          <TextResult/>
-          <Typography variant="h4" gutterBottom>
-            {props.result}
-          </Typography>
-          <IconButton onClick={props.reset}>
-            <Replay fontSize="large" />
-          </IconButton>
-            <IconButton onClick={handleChange}>
-              {copySuccess ? (
-                <CheckCircle fontSize="large" />
-              ) : (
-                <Assignment fontSize="large" />
-              )}
-            </IconButton>
-        </div>
-      </Fade>
-    );
+  };
+  return (
+    <Fade in={true}>
+      <div>
+        <TextResult />
+        <Typography variant="h4" gutterBottom>
+          {props.result}
+        </Typography>
+        <IconButton onClick={props.reset}>
+          <Replay fontSize="large" />
+        </IconButton>
+        <IconButton onClick={handleChange}>
+          {copySuccess ? (
+            <CheckCircle fontSize="large" />
+          ) : (
+            <Assignment fontSize="large" />
+          )}
+        </IconButton>
+      </div>
+    </Fade>
+  );
 }
