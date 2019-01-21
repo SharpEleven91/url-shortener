@@ -1,4 +1,5 @@
-html, body { height: 100%; }
+html, body { height: 100%;
+cursor: default; }
 
 body {
   display: flex;
@@ -57,6 +58,7 @@ body {
   opacity: 0;
   z-index: -100;
   position: absolute;
+  cursor: pointer;
 }
 
 .App-link {

@@ -10,10 +10,10 @@ export default function Result(props) {
   const [copySuccess, setCopySuccess] = useState(false);
   const textRef = useRef(props.result);
   const TextResult = () => (
-    <input id="hidden" ref={textRef} value={props.result} disabled />
+    <input id="hidden" ref={textRef} value={props.result}/>
   );
   const handleChange = () => {
-    if (document.execCommand && copySuccess) {
+    if (document.execCommand && !copySuccess) {
       textRef.current.select();
       document.execCommand("copy");
       setCopySuccess(true);
