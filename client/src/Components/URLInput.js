@@ -21,9 +21,8 @@ const styles = theme => ({
   },
   notchedOutline: {}
 });
-class URLInput extends Component {
-  render() {
-    const { classes } = this.props;
+function URLInput(props) {
+    const { classes } = props;
     return (
       <TextField
         className={classNames(classes.margin, classes.textField)}
@@ -41,13 +40,12 @@ class URLInput extends Component {
           }
         }}
         variant="outlined"
-        onChange={this.props.handleChange}
+        onChange={props.handleChange}
         autoComplete="off"
         id="custom-css-outlined-input"
-        onKeyDown={this.props.handleKeyPress}
+        onKeyDown={props.handleKeyPress}
       />
     );
-  }
 }
 
 export default withStyles(styles)(URLInput);
