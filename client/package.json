@@ -5,6 +5,7 @@
   "dependencies": {
     "@material-ui/core": "^3.9.0",
     "@material-ui/icons": "^3.0.2",
+    "jest-dom": "^3.0.0",
     "react": "^16.8.0-alpha.0",
     "react-clipboard.js": "^2.0.2",
     "react-dom": "^16.8.0-alpha.0",
