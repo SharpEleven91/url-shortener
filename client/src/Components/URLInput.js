@@ -28,6 +28,7 @@ const URLInput = (props) => {
     <TextField
       data-testid="url-input"
       className={classNames(classes.margin, classes.textField)}
+      placeholder="URL"
       InputLabelProps={{
         classes: {
           root: classes.cssLabel,

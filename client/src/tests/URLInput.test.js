@@ -9,3 +9,11 @@ test('Component renders properly', () => {
     const { queryByTestId} = render(<URLInput handleChange={mockFunc} handleKeyPress={mockFunc}/>);
     expect(queryByTestId("url-input")).toBeInTheDocument();
 });
+
+test('Input correctly updates field', () => {
+    const mockFunc = () => null;
+    const { queryByTestId, getByPlaceholderText } = render(<URLInput handleChange={mockFunc} handleKeyPress={mockFunc}/>);
+    expect(queryByTestId("url-input")).toHaveTextContent("");
+    fireEvent.change(getByPlaceholderText("URL"), { target: {value: "https://www.google.com" }});
+    expect(getByPlaceholderText("URL").value).toBe("https://www.google.com");
+});
