@@ -1,7 +1,8 @@
 import React from "react";
+import PropTypes from 'prop-types';
 import { Typography, Fade } from "@material-ui/core";
 
-export default function Error(props) {
+const Error = (props) => {
   return (
     <Fade in={props.checked} timeout={{ enter: 1700, exit: 1700 }}>
       <Typography
@@ -17,3 +18,10 @@ export default function Error(props) {
     </Fade>
   );
 }
+
+Error.propTypes = {
+  checked: PropTypes.Bool,
+}
+
+export default Error
+
