@@ -28,8 +28,6 @@
   ],
   "devDependencies": {
     "axios": "^0.18.0",
-    "enzyme": "^3.8.0",
-    "enzyme-adapter-react-16": "^1.7.1",
     "react-testing-library": "^5.4.4"
   }
 }
