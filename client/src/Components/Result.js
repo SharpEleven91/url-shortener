@@ -1,10 +1,7 @@
 import React, { useState, useRef } from "react";
-import Typography from "@material-ui/core/Typography";
-import Fade from "@material-ui/core/Fade";
-import IconButton from "@material-ui/core/IconButton";
-import { Replay } from "@material-ui/icons";
-import { CheckCircle } from "@material-ui/icons";
-import { Assignment } from "@material-ui/icons";
+import { Typography, Fade, IconButton } from "@material-ui/core/Typography";
+import { Replay, CheckCircle, Assignment } from "@material-ui/icons";
+
 
 const Result = (props) => {
   const [copySuccess, setCopySuccess] = useState(false);

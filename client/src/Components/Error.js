@@ -1,6 +1,5 @@
 import React from "react";
-import Typography from "@material-ui/core/Typography";
-import Fade from "@material-ui/core/Fade";
+import { Typography, Fade } from "@material-ui/core/Typography";
 const Error = (props) => {
   return (
     <Fade in={props.checked} timeout={{ enter: 1700, exit: 1700 }}>
