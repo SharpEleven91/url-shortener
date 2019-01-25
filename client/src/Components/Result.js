@@ -6,7 +6,7 @@ import { Replay } from "@material-ui/icons";
 import { CheckCircle } from "@material-ui/icons";
 import { Assignment } from "@material-ui/icons";
 
-export default function Result(props) {
+const Result = (props) => {
   const [copySuccess, setCopySuccess] = useState(false);
   const textRef = useRef(props.result);
   const TextResult = () => (
@@ -40,3 +40,5 @@ export default function Result(props) {
     </Fade>
   );
 }
+
+export default Result

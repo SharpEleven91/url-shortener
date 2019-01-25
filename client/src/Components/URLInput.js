@@ -21,7 +21,7 @@ const styles = theme => ({
   },
   notchedOutline: {}
 });
-function URLInput(props) {
+const URLInput = (props) => {
   const { classes } = props;
   return (
     <TextField

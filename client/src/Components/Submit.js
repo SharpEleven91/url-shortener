@@ -14,7 +14,7 @@ const styles = theme => ({
     margin: theme.spacing.unit
   }
 });
-function Submit(props) {
+const Submit = (props) => {
   const { classes } = props;
   return (
     <Button

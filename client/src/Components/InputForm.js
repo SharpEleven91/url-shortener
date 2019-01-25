@@ -2,7 +2,7 @@ import React from "react";
 import SubmitButton from "./Submit";
 import URLInput from "./URLInput";
 
-export default function InputForm(props) {
+const InputForm = (props) => {
   return (
     <div className="inputgroup">
       <URLInput
@@ -13,3 +13,5 @@ export default function InputForm(props) {
     </div>
   );
 }
+
+export default InputForm

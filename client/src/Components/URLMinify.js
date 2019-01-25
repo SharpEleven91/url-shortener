@@ -12,7 +12,7 @@ const axiosConfig = {
   }
 };
 const baseUrl = "https://umini.herokuapp.com";
-export default function URLMinify() {
+const URLMinify = () => {
   const [url, setUrl] = useState('');
   const [result, setResult] = useState('');
   const [error, setError] = useState('');
@@ -68,3 +68,5 @@ export default function URLMinify() {
       
     );
 }
+
+export default URLMinify
