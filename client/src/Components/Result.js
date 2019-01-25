@@ -1,4 +1,5 @@
 import React, { useState, useRef } from "react";
+import PropTypes from 'prop-types';
 import { Typography, Fade, IconButton } from "@material-ui/core/Typography";
 import { Replay, CheckCircle, Assignment } from "@material-ui/icons";
 
@@ -36,6 +37,11 @@ const Result = (props) => {
       </div>
     </Fade>
   );
+}
+
+Result.propTypes = {
+  result: PropTypes.string,
+  resetState: PropTypes.func,
 }
 
 export default Result
