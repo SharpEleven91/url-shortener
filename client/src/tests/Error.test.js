@@ -1,10 +1,11 @@
 import React from 'react';
 import expect from 'expect';
 import Error from '../Components/Error';
-import { render } from 'react-testing-library';
+import { render, cleanup } from 'react-testing-library';
 import "jest-dom/extend-expect";
-
+afterEach(cleanup);
 test('Component renders properly', () => {
-    const { queryByTestId, container } = render(<Error checked={true}/>);
+    const { queryByTestId } = render(<Error checked={true}/>);
     expect(queryByTestId("error-display")).toHaveTextContent("Invalid URL");
+    expect(queryByTestId("error-display")).toMatchSnapshot();
 });

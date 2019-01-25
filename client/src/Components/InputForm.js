@@ -5,7 +5,7 @@ import URLInput from "./URLInput";
 
 const InputForm = (props) => {
   return (
-    <div className="inputgroup">
+    <div data-testid="inputForm" className="inputgroup">
       <URLInput
         handleChange={props.handleChange}
         handleKeyPress={props.handleKeyPress}
@@ -17,7 +17,7 @@ const InputForm = (props) => {
 InputForm.propTypes = {
   handleChange: PropTypes.func,
   handleKeyPress: PropTypes.func,
-  onSubmit: PropTypes.fun,
+  onSubmit: PropTypes.func,
 }
 
 export default InputForm

@@ -31,12 +31,7 @@ body {
 #urlinput {
   border-color: #625772 !important;
 }
-.logo {
-  background-color: #625772;
-  color: white !important;
-  padding: 110px;
-  margin-bottom: 25px;
-}
+
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;

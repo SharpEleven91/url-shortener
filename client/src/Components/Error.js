@@ -20,7 +20,7 @@ const Error = (props) => {
 }
 
 Error.propTypes = {
-  checked: PropTypes.Bool,
+  checked: PropTypes.bool,
 }
 
 export default Error

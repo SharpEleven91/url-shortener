@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component renders properly 1`] = `
+<div
+  class="inputgroup"
+  data-testid="inputForm"
+>
+  <div
+    class="MuiFormControl-root-6 URLInput-margin-1 URLInput-textField-2"
+    data-testid="url-input"
+  >
+    <div
+      class="MuiInputBase-root-23 MuiOutlinedInput-root-10 URLInput-cssOutlinedInput-4 MuiInputBase-formControl-24"
+    >
+      <fieldset
+        aria-hidden="true"
+        class="MuiPrivateNotchedOutline-root-40 MuiOutlinedInput-notchedOutline-17 URLInput-notchedOutline-5"
+        style="padding-left: 8px;"
+      >
+        <legend
+          class="MuiPrivateNotchedOutline-legend-41"
+          style="width: 0.01px;"
+        >
+          <span>
+            ​
+          </span>
+        </legend>
+      </fieldset>
+      <input
+        aria-invalid="false"
+        autocomplete="off"
+        class="MuiInputBase-input-33 MuiOutlinedInput-input-18"
+        id="custom-css-outlined-input"
+        type="text"
+        value=""
+      />
+    </div>
+  </div>
+  <button
+    class="MuiButtonBase-root-71 MuiButton-root-45 MuiButton-outlined-53 MuiButton-sizeLarge-69 MuiButton-colorInherit-66 Submit-button-42"
+    data-testid="submit-button"
+    tabindex="0"
+    type="button"
+  >
+    <span
+      class="MuiButton-label-46"
+    >
+       
+      MiNiFy
+       
+    </span>
+    <span
+      class="MuiTouchRipple-root-74"
+    />
+  </button>
+</div>
+`;

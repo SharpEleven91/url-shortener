@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component renders properly 1`] = `
+<h3
+  class="MuiTypography-root-1 MuiTypography-h3-15 MuiTypography-colorError-35 MuiTypography-gutterBottom-28"
+  data-testid="error-display"
+  style="opacity: 1; -webkit-transition: opacity 1700ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;"
+>
+   
+  Invalid URL
+   
+</h3>
+`;

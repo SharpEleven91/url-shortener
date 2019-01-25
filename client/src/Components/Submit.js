@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types';
 import { withStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 
@@ -18,6 +19,7 @@ const Submit = (props) => {
   const { classes } = props;
   return (
     <Button
+      data-testid="submit-button"
       size="large"
       variant="outlined"
       onClick={props.onSubmit}
@@ -28,6 +30,11 @@ const Submit = (props) => {
       MiNiFy{" "}
     </Button>
   );
+}
+
+Submit.propTypes = {
+  classes: PropTypes.object.isRequired,
+  onSubmit: PropTypes.func.isRequired,
 }
 
 export default withStyles(styles)(Submit);

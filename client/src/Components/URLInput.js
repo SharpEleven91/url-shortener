@@ -1,5 +1,6 @@
 import React from "react";
 import TextField from "@material-ui/core/TextField";
+import PropTypes from 'prop-types';
 import { withStyles } from "@material-ui/core/styles";
 import classNames from "classnames";
 const styles = theme => ({
@@ -25,6 +26,7 @@ const URLInput = (props) => {
   const { classes } = props;
   return (
     <TextField
+      data-testid="url-input"
       className={classNames(classes.margin, classes.textField)}
       InputLabelProps={{
         classes: {
@@ -47,5 +49,13 @@ const URLInput = (props) => {
     />
   );
 }
+
+URLInput.propTypes = {
+  classes: PropTypes.object,
+  handleChange: PropTypes.func,
+  handleKeyPress: PropTypes.func
+}
+
+
 
 export default withStyles(styles)(URLInput);
