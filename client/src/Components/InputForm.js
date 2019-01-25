@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types';
 import SubmitButton from "./Submit";
 import URLInput from "./URLInput";
 
@@ -12,6 +13,11 @@ const InputForm = (props) => {
       <SubmitButton onSubmit={props.onSubmit} />
     </div>
   );
+}
+InputForm.propTypes = {
+  handleChange: PropTypes.func,
+  handleKeyPress: PropTypes.func,
+  onSubmit: PropTypes.fun,
 }
 
 export default InputForm
