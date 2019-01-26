@@ -5,10 +5,11 @@ A URL Shortening Microservice ala Goo.gl or Bit.ly
 ## Hosted at [URL MiNiFy](https://umini.herokuapp.com)
 ## Built With
 
-* React
-* Mongoose
-* Node.js
-* Express
+* [React](https://reactjs.org/)
+* [Mongoose](https://mongoosejs.com/)
+* [Node.js](https://nodejs.org/en/)
+* [Express](https://expressjs.com/)
+* [Validator](https://www.npmjs.com/package/validator)
 
 ## Installation
 
@@ -16,7 +17,7 @@ Add your own config folder to root
 
 Create your own db.js within config
 ``` 
-// example db.js
+// example config/db.js
 module.exports = {
     url: // database access point 
 }
