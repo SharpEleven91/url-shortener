@@ -25,7 +25,7 @@ modules.export = {
 * Navigate to Client/src/Components/URLMinify.js
 * Change baseUrl
 ```
-   const baseUrl = "https://localhost:8000
+   const baseUrl = "https://localhost:8000"
 ```
 
 Finally
