@@ -27,6 +27,9 @@ module.exports = function(app) {
     const urlID = shortid.generate(); // generate hash id
     const updatedAt = new Date(); // create new date
     if (valid.isURL(originalUrl)) {
+      if (!originalUrl.match("^(http|https)://", "i")) { // checks the valid url for http/https prefix
+        originalUrl = "http://" + originalUrl;           // if it isn't there then add it
+      }
       try {
         const query = await ShortUrl.findOne({ originalUrl: originalUrl }); // query database to see if the url has already been shortened before
         if (query) {
