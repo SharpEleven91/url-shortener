@@ -10,7 +10,7 @@ A URL Shortening Microservice ala Goo.gl or Bit.ly
 * [Node.js](https://nodejs.org/en/)
 * [Express](https://expressjs.com/)
 * [Validator](https://www.npmjs.com/package/validator)
-
+* [MongoDB](https://www.mongodb.com/) via [mLab](https://mlab.com/)
 ## Installation
 
 Add your own config folder to root
