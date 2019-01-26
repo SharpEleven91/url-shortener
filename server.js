@@ -18,7 +18,7 @@ mongoose.connect(database.url, connectionOps, (err, db) => {
   console.log("Database connected");
   app.use(bodyParser.json());
   require("./models/ShortUrl");
-  app.use(express.static(path.join(__dirname + "/client/build")));
+ // app.use(express.static(path.join(__dirname + "/client/build")));
   app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
     res.header(

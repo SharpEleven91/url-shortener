@@ -1,4 +1,4 @@
-const validUrl = require("valid-url");
+const valid = require('validator');
 const shortid = require("shortid");
 const mongoose = require("mongoose");
 const ShortUrl = mongoose.model("ShortUrl");
@@ -13,20 +13,20 @@ module.exports = function(app) {
     else res.status(404).json(err); // else throw error
   });
 
-  app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname + "/client/build/index.html"));
-  });
+ // app.get("*", (req, res) => {
+  //  res.sendFile(path.join(__dirname + "/client/build/index.html"));
+ // });
   // create new hash URL and place in database
   app.post("/api/url-shortener", async (req, res) => {
     let { originalUrl, baseUrl } = req.body; // extract originalUrl and baseUrl from request body
     originalUrl = originalUrl.toLowerCase(); // normalize originalUrls so duplicates are not created in database because of case-sensitivity when search
-    if (!validUrl.isUri(baseUrl) || originalUrl === "") {
+    if (!valid.isURL(baseUrl) || originalUrl === "") {
       // if the baseUrl is invalid throw an error
       return res.status(401).json("Bad Base URL");
     }
     const urlID = shortid.generate(); // generate hash id
     const updatedAt = new Date(); // create new date
-    if (validUrl.isUri(originalUrl)) {
+    if (valid.isURL(originalUrl)) {
       try {
         const query = await ShortUrl.findOne({ originalUrl: originalUrl }); // query database to see if the url has already been shortened before
         if (query) {
