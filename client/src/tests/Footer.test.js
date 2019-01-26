@@ -7,5 +7,4 @@ afterEach(cleanup);
 test('Component renders properly', () => {
     const { queryByTestId } = render(<Footer/>);
     expect(queryByTestId("github-button")).toBeInTheDocument();
-    expect(queryByTestId("github-button")).toMatchSnapshot();
 });

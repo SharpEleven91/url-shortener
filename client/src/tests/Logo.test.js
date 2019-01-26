@@ -7,5 +7,4 @@ afterEach(cleanup);
 test('Component renders properly', () => {
     const { queryByTestId } = render(<Logo/>);
     expect(queryByTestId("logo")).toHaveTextContent("./URL MiNiFy");
-    expect(queryByTestId("logo")).toMatchSnapshot();
 });

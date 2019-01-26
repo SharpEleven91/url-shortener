@@ -14,5 +14,4 @@ test("Component renders properly", () => {
     />
   );
   expect(queryByTestId("inputForm")).toBeInTheDocument();
-  expect(queryByTestId("inputForm")).toMatchSnapshot();
 });
