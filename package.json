@@ -11,9 +11,7 @@
   "dependencies": {
     "express": "^4.16.4",
     "mongoose": "^5.4.4",
-    "sanitize": "^2.1.0",
     "shortid": "^2.2.14",
-    "valid-url": "^1.0.9",
     "validator": "^10.11.0"
   }
 }
