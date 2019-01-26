@@ -1,7 +1,7 @@
 import React from 'react';
 import expect from 'expect';
 import URLInput from '../Components/URLInput'
-import { render, cleanup, fireEvent, waitForDomChange } from 'react-testing-library';
+import { render, cleanup, fireEvent } from 'react-testing-library';
 import "jest-dom/extend-expect";
 afterEach(cleanup);
 test('Component renders properly', () => {

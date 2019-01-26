@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "../App.css";
 import Result from "./Result.js";
 import axios from "axios";
@@ -6,16 +6,19 @@ import Error from "./Error";
 import Logo from "./Logo";
 import InputForm from "./InputForm";
 import Footer from "./Footer";
+
 const axiosConfig = {
   headers: {
     "Content-Type": "application/json"
   }
 };
 const baseUrl = "https://umini.herokuapp.com";
+
 const URLMinify = () => {
   const [url, setUrl] = useState("");
-  const [result, setResult] = useState("aa");
+  const [result, setResult] = useState("");
   const [error, setError] = useState("");
+
   function handleChange(event) {
     if (error) {
       setError("");
@@ -46,7 +49,7 @@ const URLMinify = () => {
     }
   }
   return (
-    <div className="App">
+    <div data-testid="URLMinify" className="App">
       <Logo />
       <Error checked={error ? true : false} />
       {result ? (
