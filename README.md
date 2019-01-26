@@ -17,7 +17,7 @@ Add your own config folder to root
 Create your own db.js within config
 ``` 
 // example db.js
-modules.export = {
+module.exports = {
     url: // database access point 
 }
 ```
