@@ -7,5 +7,4 @@ afterEach(cleanup);
 test('Component renders properly', () => {
     const { queryByTestId } = render(<Error checked={true}/>);
     expect(queryByTestId("error-display")).toHaveTextContent("Invalid URL");
-    expect(queryByTestId("error-display")).toMatchSnapshot();
 });
