@@ -1,5 +1,6 @@
 # URL MiNiFy
 [![Build Status](https://travis-ci.org/SharpEleven91/url-shortener.svg?branch=master)](https://travis-ci.org/SharpEleven91/url-shortener)
+
 A URL Shortening Microservice ala Goo.gl or Bit.ly
 
 ## Hosted at [URL MiNiFy](https://umini.herokuapp.com)
