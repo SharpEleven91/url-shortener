@@ -12,11 +12,17 @@ A URL Shortening Microservice ala Goo.gl or Bit.ly
 * [Express](https://expressjs.com/)
 * [Validator](https://www.npmjs.com/package/validator)
 * [MongoDB](https://www.mongodb.com/) via [mLab](https://mlab.com/)
+* [React Testing Library](https://github.com/kentcdodds/react-testing-library)
 ## Installation
 
+First clone the repo 
+```git clone https://github.com/SharpEleven91/url-shortener
+   cd url-shortener
+```
 Add your own config folder to root
 
 Create your own db.js within config
+
 ``` 
 // example config/db.js
 module.exports = {
@@ -30,10 +36,8 @@ module.exports = {
    const baseUrl = "https://localhost:8000"
 ```
 
-Finally
-
-```git clone url
-   cd url-shortener
+Finally starting in the root folder
+```
    npm install
    cd client && npm install
    npm build
