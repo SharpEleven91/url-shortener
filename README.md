@@ -16,7 +16,8 @@ A URL Shortening Microservice ala Goo.gl or Bit.ly
 ## Installation
 
 First clone the repo 
-```git clone https://github.com/SharpEleven91/url-shortener
+```
+   git clone https://github.com/SharpEleven91/url-shortener
    cd url-shortener
 ```
 Add your own config folder to root
